@@ -26,6 +26,8 @@ gem 'simple_form', '~> 5.0', '>= 5.0.3'
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 
 gem 'bulma-rails', '~> 0.9.1'
+
+gem 'devise', '~> 4.7', '>= 4.7.3'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

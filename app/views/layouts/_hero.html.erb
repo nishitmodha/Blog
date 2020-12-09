@@ -4,7 +4,7 @@
         <nav class="navbar">
           <div class="container">
             <div class="navbar-brand">
-              <%= link_to 'Demo Blog', root_path, class: "navbar-item" %>
+              <%= link_to 'Blog', root_path, class: "navbar-item" %>
               <span class="navbar-burger burger" data-target="navbarMenuHeroA">
                 <span></span>
                 <span></span>
@@ -13,7 +13,14 @@
             </div>
             <div id="navbarMenuHeroA" class="navbar-menu">
               <div class="navbar-end">
+                <% if user_signed_in? %>
                 <%= link_to "Create New Post", new_post_path, class:"navbar-item" %>
+                <%= link_to current_user.user_name, edit_user_registration_path, class:"navbar-item" %>
+                <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"navbar-item" %>
+                <% else %>
+                <%= link_to "Log In", new_user_session_path, class:"navbar-item" %>
+                <%= link_to "Register", new_user_registration_path, class:"navbar-item" %>
+                <% end %>
               </div>
             </div>
           </div>

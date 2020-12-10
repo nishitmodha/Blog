@@ -13,5 +13,8 @@ class CommentsController < ApplicationController
         @comment = @post.comments.find(params[:id])
         @comment.destroy
         redirect_to post_path(@post), notice: "Comment Deleted"
-    end
+    end 
 end
+
+
+

@@ -39,6 +39,10 @@ class PostsController < ApplicationController
 
     def destroy
         @post.destroy
+        @comment = @post.comments.where(post_id: @post.id) 
+        @comment.each do |comment|
+            comment.destroy
+        end
         
         redirect_to posts_path, notice: "Post Deleted"
     end

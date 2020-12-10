@@ -14,5 +14,4 @@ class CommentsController < ApplicationController
         @comment.destroy
         redirect_to post_path(@post), notice: "Comment Deleted"
     end
-
 end
